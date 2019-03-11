@@ -2,12 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 	container: {
-		'backgroundColor': 'rgb(32, 35, 41);',
-		'flex': 1,
-		'display': 'flex'
+		backgroundColor: 'rgb(32, 35, 41);',
+		flex: 1,
+		display: 'flex'
 	},
-	image: {
-		'width': 50,
+	logo: {
+		height: 100,
+		margin: 10
 	}
 });
 

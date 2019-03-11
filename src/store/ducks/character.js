@@ -4,14 +4,18 @@ export const TYPES = {
 };
 
 const INITIAL_STATE = {
-	data: [],
-	loading: false
+	loading: false,
+	info: {},
+	results: []
 };
 
 export default function character(state = INITIAL_STATE, action) {
 	switch(action.type) {
 		case TYPES.GET_SUCCESS:
-			return { ...state, data: [action.payload.data]}
+			return {
+				...state,
+				info: action.payload.info,
+				results: [...state.results, ...action.payload.results] }
 
 		default:
 			return state;
@@ -24,8 +28,6 @@ export const Creators = {
 	}),
 	getCharactersSuccess: data => ({
 		type: TYPES.GET_SUCCESS,
-		payload: {
-			data
-		}
+		payload: data
 	})
 }
